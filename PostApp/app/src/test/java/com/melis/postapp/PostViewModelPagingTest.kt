@@ -12,7 +12,6 @@ import kotlinx.coroutines.test.runTest
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
-import kotlin.test.assertNotNull
 
 @OptIn(ExperimentalCoroutinesApi::class)
 class PostViewModelPagingTest {
@@ -23,11 +22,11 @@ class PostViewModelPagingTest {
     private lateinit var fakePagingRepository: FakePagingPostRepository
     private lateinit var viewModel: PostViewModel
 
-    private val testPosts = List(30) { i -> Post(i, 1, "Title $i", "Body $i") }
+    private val testPosts = List(30) { i -> Post(i, 1 ,"Title $i", "Body $i") }
 
     @Before
     fun setup() {
-        fakePagingRepository = FakePagingPostRepository(testPosts)
+        fakePagingRepository = FakePagingPostRepository()
         val useCase = GetPostsUseCase(fakePagingRepository)
         viewModel = PostViewModel(useCase)
     }

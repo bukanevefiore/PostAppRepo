@@ -9,7 +9,7 @@ import kotlinx.coroutines.flow.flowOf
 class FakePagingPostRepository : PostRepository {
     override fun getPosts(): Flow<PagingData<Post>> {
         val fakePosts = List(10) { index ->
-            Post(id = index, title = "Title $index", body = "Body $index")
+            Post(id = index, userId = 123 ,title = "Title $index", body = "Body $index")
         }
         return flowOf(PagingData.from(fakePosts))
     }

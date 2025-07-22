@@ -103,4 +103,12 @@ dependencies {
     implementation(libs.paging.compose)
     testImplementation(libs.paging.common)
 
+    testImplementation(libs.turbine)
+
+
+    //implementation("androidx.paging:paging-compose:3.3.2")
+
+    testImplementation(libs.robolectric)
+
+
 }
